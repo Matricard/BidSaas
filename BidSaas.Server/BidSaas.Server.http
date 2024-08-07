@@ -1,0 +1,6 @@
+@BidSaas.Server_HostAddress = http://localhost:5263
+
+GET {{BidSaas.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
