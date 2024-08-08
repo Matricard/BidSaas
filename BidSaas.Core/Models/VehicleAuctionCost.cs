@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BidSaas.Core.Models
 {
-    public class VehicleAuctionCost
+    public class VehicleAuctionCost: IEquatable<VehicleAuctionCost>
     {
         // Propriétés publiques avec getters publics et setters privés
         public float BasePrice { get; private set; }
@@ -25,7 +25,26 @@ namespace BidSaas.Core.Models
         }
 
         public float AuctionFee => BuyerFee + SellerFee + AssociationFee + StorageFee;
-        public float Total =>  BasePrice + AuctionFee;
+        public float Total => BasePrice + AuctionFee;
+
+        public bool Equals(VehicleAuctionCost? vehicle)
+        {
+            if (vehicle != null)
+            {
+
+                return AreFloatsEqual(vehicle.BasePrice, BasePrice) &&
+                       AreFloatsEqual(vehicle.BuyerFee, BuyerFee) &&
+                       AreFloatsEqual(vehicle.SellerFee, SellerFee) &&
+                       AreFloatsEqual(vehicle.AssociationFee, AssociationFee) &&
+                       AreFloatsEqual(vehicle.StorageFee, StorageFee);
+            }
+
+            return false;
+        }
+        private static bool AreFloatsEqual(float a, float b, float epsilon = 0.0001f)
+        {
+            return Math.Abs(a - b) < epsilon;
+        }
     }
 
 }

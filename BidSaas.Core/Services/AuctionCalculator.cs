@@ -6,13 +6,13 @@ namespace BidSaas.Core.Services
 {
     public class AuctionCalculator
     {
-        public VehicleAuctionCost CalculateTotalPrice(float basePrice, VehicleType type)
+        public VehicleAuctionCost CalculateTotalPrice(Vehicle vehicle)
         {
-            float buyerFee = CalculateBuyerFee(basePrice, type);
-            float sellerFee = CalculateSellerFee(basePrice, type);
-            float associationFee = CalculateAssociationFee(basePrice);
+            float buyerFee = CalculateBuyerFee(vehicle.BasePrice, vehicle.Type);
+            float sellerFee = CalculateSellerFee(vehicle.BasePrice, vehicle.Type);
+            float associationFee = CalculateAssociationFee(vehicle.BasePrice);
 
-            return new VehicleAuctionCost(basePrice, buyerFee, sellerFee, associationFee, FeeConstants.FixedStorageFee);
+            return new VehicleAuctionCost(vehicle.BasePrice, buyerFee, sellerFee, associationFee, FeeConstants.FixedStorageFee);
         }
 
         private float CalculateBuyerFee(float basePrice, VehicleType type)

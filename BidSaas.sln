@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidSaas.Server", "BidSaas.Server\BidSaas.Server.csproj", "{BD027309-5B32-4397-BA34-6B8FB9A04092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BidSaas.Server", "BidSaas.Server\BidSaas.Server.csproj", "{BD027309-5B32-4397-BA34-6B8FB9A04092}"
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "bidsaas.client", "bidsaas.client\bidsaas.client.esproj", "{4ED22344-2A07-4293-BDBB-D528CB6252AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidSaas.Core", "BidSaas.Core\BidSaas.Core.csproj", "{8680DE66-71AB-4C33-8D03-512A0482F231}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{09132024-13CD-4A2D-A1B3-1B448953C441}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BidSaas.Core.Tests", "BidSaas.Core.Tests\BidSaas.Core.Tests.csproj", "{6CFA1FC9-8D96-419E-A597-3842FBEB2D17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +29,20 @@ Global
 		{4ED22344-2A07-4293-BDBB-D528CB6252AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ED22344-2A07-4293-BDBB-D528CB6252AC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4ED22344-2A07-4293-BDBB-D528CB6252AC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8680DE66-71AB-4C33-8D03-512A0482F231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8680DE66-71AB-4C33-8D03-512A0482F231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8680DE66-71AB-4C33-8D03-512A0482F231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8680DE66-71AB-4C33-8D03-512A0482F231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CFA1FC9-8D96-419E-A597-3842FBEB2D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CFA1FC9-8D96-419E-A597-3842FBEB2D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CFA1FC9-8D96-419E-A597-3842FBEB2D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CFA1FC9-8D96-419E-A597-3842FBEB2D17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CFA1FC9-8D96-419E-A597-3842FBEB2D17} = {09132024-13CD-4A2D-A1B3-1B448953C441}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A4303400-A3B2-495A-89ED-CE66F7A1F781}

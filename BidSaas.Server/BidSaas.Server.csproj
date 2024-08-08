@@ -20,6 +20,7 @@
     <ProjectReference Include="..\bidsaas.client\bidsaas.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\BidSaas.Core\BidSaas.Core.csproj" />
   </ItemGroup>
 
 </Project>
