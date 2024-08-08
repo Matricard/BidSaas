@@ -17,7 +17,15 @@ namespace BidSaas.Core.Constants
 
         public const float FixedStorageFee = 100.0f;
 
-        public static readonly ReadOnlyDictionary<float, float> AssociationCostTiers = new ReadOnlyDictionary<float, float>(
+
+        /// <summary>
+        /// Association based fee based on the price of the vehicle <br />
+        /// $5 for an amount up to $500 <br />
+        /// $10 for an amount up to $1000 <br />
+        /// $15 for an amount up to $3000 <br />
+        /// $20 for an amount over $3000 
+        /// </summary>
+        public static readonly ReadOnlyDictionary<float, float> AssociationCostTiers = new ReadOnlyDictionary<float, float>( 
             new Dictionary<float, float>
         {
             { 500, 5 },

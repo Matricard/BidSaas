@@ -1,17 +1,17 @@
 ﻿using BidSaas.Core.Enums;
 using BidSaas.Core.Constants;
+
 namespace BidSaas.Core.Services
 {
-    public class FeeCalculator
+    public class AuctionCalculator
     {
-        public float CalculateTotalFee(float basePrice, VehicleType type)
+        public float CalculateTotalPrice(float basePrice, VehicleType type)
         {
             float buyerFee = CalculateBuyerFee(basePrice, type);
             float sellerFee = CalculateSellerFee(basePrice, type);
             float associationFee = CalculateAssociationFee(basePrice);
-            float totalFee = buyerFee + sellerFee + associationFee + FeeConstants.FixedStorageFee;
 
-            return totalFee;
+            return basePrice + buyerFee + sellerFee + associationFee + FeeConstants.FixedStorageFee;
         }
 
         private float CalculateBuyerFee(float basePrice, VehicleType type)
@@ -32,7 +32,9 @@ namespace BidSaas.Core.Services
 
         private float CalculateSellerFee(float basePrice, VehicleType type)
         {
-            float feePercentage = (type == VehicleType.Common) ? FeeConstants.CommonSellerFeePercentage : FeeConstants.LuxurySellerFeePercentage;
+            float feePercentage = (type == VehicleType.Common) ? 
+                FeeConstants.CommonSellerFeePercentage : FeeConstants.LuxurySellerFeePercentage;
+
             return basePrice * feePercentage;
         }
 
