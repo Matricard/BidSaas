@@ -50,5 +50,4 @@ namespace BidSaas.Core.Services
             return FeeConstants.AssociationCostTiers[float.MaxValue];
         }
     }
-
 }

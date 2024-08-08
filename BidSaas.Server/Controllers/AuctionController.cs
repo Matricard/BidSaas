@@ -1,4 +1,5 @@
 using BidSaas.Core.Models;
+using BidSaas.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BidSaas.Server.Controllers
@@ -8,17 +9,20 @@ namespace BidSaas.Server.Controllers
     public class AuctionController : ControllerBase
     {
         private readonly ILogger<AuctionController> _logger;
+        private readonly AuctionCalculator _auctionCalculator;
+
 
         public AuctionController(ILogger<AuctionController> logger)
         {
             _logger = logger;
+            _auctionCalculator = new AuctionCalculator();
         }
 
-        [HttpGet(Name = "GetVehicleAuctionCost")]
-        public IActionResult GetVehicleAuctionCost()
+        [HttpPost(Name = "GetVehicleAuctionCost")]
+        public IActionResult GetVehicleAuctionCost([FromBody] Vehicle vehicle)
         {
-            //if 200 return response with object -> VehicleAuctionCost 
-            return Ok();
+            var auctionCost = _auctionCalculator.CalculateTotalPrice(vehicle);
+            return Ok(new { Cost = auctionCost });
         }
     }
 }

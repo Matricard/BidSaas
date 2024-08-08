@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BidSaas.Core.Models
+﻿namespace BidSaas.Core.Models
 {
     public class VehicleAuctionCost: IEquatable<VehicleAuctionCost>
     {
-        // Propriétés publiques avec getters publics et setters privés
         public float BasePrice { get; private set; }
         public float BuyerFee { get; private set; }
         public float SellerFee { get; private set; }
@@ -46,5 +39,4 @@ namespace BidSaas.Core.Models
             return Math.Abs(a - b) < epsilon;
         }
     }
-
 }

@@ -2,7 +2,7 @@
 {
     public enum VehicleType
     {
-        Common,
-        Luxury 
+        Common = 0,
+        Luxury = 1 
     }
 }
