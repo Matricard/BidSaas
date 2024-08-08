@@ -1,6 +1,7 @@
 <template>
     <div class="d-flex flex-column justify-content-center align-items-center mt-5">
         <div class="mb-4" style="width: 20rem;">
+            <label>Vehicle type</label>
             <div class="mb-3">
                 <select v-model="selectedType" class="form-select">
                     <option disabled value="">Please select one</option>
@@ -9,6 +10,7 @@
                 </select>
             </div>
 
+            <label>Vehicle base price</label>
             <div class="input-group mb-3">
                 <span class="input-group-text">$</span>
                 <input v-model.number="basePriceInput"
