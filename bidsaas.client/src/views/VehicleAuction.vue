@@ -27,7 +27,6 @@
           <li>Seller Fee: {{ costDetails.sellerFee.toFixed(2) }} $</li>
           <li>Association Fee: {{ costDetails.associationFee.toFixed(2) }} $</li>
           <li>Storage Fee: {{ costDetails.storageFee.toFixed(2) }} $</li>
-          <li>Auction Fee: {{ costDetails.auctionFee.toFixed(2) }} $</li>
           <li>Total: {{ costDetails.total.toFixed(2) }} $</li>
         </ul>
       </div>
@@ -97,3 +96,9 @@
         }
     };
 </script>
+
+<style>
+    .list-unstyled li {
+        margin-bottom: 0.5rem;
+    }
+</style>
