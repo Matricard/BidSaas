@@ -1,37 +1,37 @@
 <template>
-    <div class="d-flex flex-column justify-content-center align-items-center mt-5" >
-      <div class="mb-4" style="width: 20rem;">
-        <div class="mb-3">
-          <select v-model="selectedType" class="form-select">
-            <option disabled value="">Please select one</option>
-            <option value="0">Common</option>
-            <option value="1">Luxury</option>
-          </select>
+    <div class="d-flex flex-column justify-content-center align-items-center mt-5">
+        <div class="mb-4" style="width: 20rem;">
+            <div class="mb-3">
+                <select v-model="selectedType" class="form-select">
+                    <option disabled value="">Please select one</option>
+                    <option value="0">Common</option>
+                    <option value="1">Luxury</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text">$</span>
+                <input v-model.number="basePriceInput"
+                       type="number"
+                       step="0.01"
+                       class="form-control"
+                       placeholder="Enter vehicle price here" />
+            </div>
         </div>
-  
-        <div>
-          <input 
-            v-model.number="basePriceInput" 
-            type="number" 
-            step="0.01"
-            class="form-control" 
-            placeholder="Enter vehicle price here"/>
+
+        <div v-if="costDetails" class="card p-4" style="width: 20rem;">
+            <h2>Cost Details</h2>
+            <ul class="list-unstyled">
+                <li>Base Price: {{ costDetails.basePrice.toFixed(2) }} $</li>
+                <li>Buyer Fee: {{ costDetails.buyerFee.toFixed(2) }} $</li>
+                <li>Seller Fee: {{ costDetails.sellerFee.toFixed(2) }} $</li>
+                <li>Association Fee: {{ costDetails.associationFee.toFixed(2) }} $</li>
+                <li>Storage Fee: {{ costDetails.storageFee.toFixed(2) }} $</li>
+                <li>Total: {{ costDetails.total.toFixed(2) }} $</li>
+            </ul>
         </div>
-      </div>
-  
-      <div v-if="costDetails" class="card p-4" style="width: 20rem;">
-        <h2>Cost Details</h2>
-        <ul class="list-unstyled">
-          <li>Base Price: {{ costDetails.basePrice.toFixed(2) }} $</li>
-          <li>Buyer Fee: {{ costDetails.buyerFee.toFixed(2) }} $</li>
-          <li>Seller Fee: {{ costDetails.sellerFee.toFixed(2) }} $</li>
-          <li>Association Fee: {{ costDetails.associationFee.toFixed(2) }} $</li>
-          <li>Storage Fee: {{ costDetails.storageFee.toFixed(2) }} $</li>
-          <li>Total: {{ costDetails.total.toFixed(2) }} $</li>
-        </ul>
-      </div>
     </div>
-  </template>
+</template>
 
 <script>
     import CostModel from '../models/CostModel.js';
