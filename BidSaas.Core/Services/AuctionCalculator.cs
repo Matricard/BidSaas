@@ -1,17 +1,18 @@
 ﻿using BidSaas.Core.Enums;
 using BidSaas.Core.Constants;
+using BidSaas.Core.Models;
 
 namespace BidSaas.Core.Services
 {
     public class AuctionCalculator
     {
-        public float CalculateTotalPrice(float basePrice, VehicleType type)
+        public VehicleAuctionCost CalculateTotalPrice(float basePrice, VehicleType type)
         {
             float buyerFee = CalculateBuyerFee(basePrice, type);
             float sellerFee = CalculateSellerFee(basePrice, type);
             float associationFee = CalculateAssociationFee(basePrice);
 
-            return basePrice + buyerFee + sellerFee + associationFee + FeeConstants.FixedStorageFee;
+            return new VehicleAuctionCost(basePrice, buyerFee, sellerFee, associationFee, FeeConstants.FixedStorageFee);
         }
 
         private float CalculateBuyerFee(float basePrice, VehicleType type)
