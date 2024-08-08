@@ -6,3 +6,6 @@ This project is a web application for calculating the total price of a vehicle a
 
 - **Frontend:** Vue 3
 - **Backend:** .NET 8.0
+
+## ScreenShot
+![alt text](screenshot.png)

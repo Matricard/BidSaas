@@ -40,6 +40,9 @@ namespace BidSaas.Core.Tests
                 new VehicleAuctionCost(1000000, 200, 40000, 20, 100),
             });
 
+            //Comparing fees and the vehicle price doesn't require a separate total calculation,
+            //as the totals will be equal if all conditions are identical.
+
             // Act & Assert
             for (int i=0; i< Vehicles.Count;i++)
             {
